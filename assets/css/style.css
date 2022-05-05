@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+body {
+background-color: rgb(10, 10, 10);
+font-family: 'IBM Plex Mono', sans-serif;
+color: whitesmoke;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+.main-title {
+    height: 15vh;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 2fr 1fr;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+h2 span:nth-of-type(1), h2 span:nth-of-type(8), h2 span:nth-of-type(9) {
+    color: red;
+}
+
+h2 span:nth-of-type(2), h2 span:nth-of-type(7) {
+    color: green;
+}
+
+h2 span:nth-of-type(3), h2 span:nth-of-type(5) {
+    color: yellow;
+}
+
+h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
+    color: blue;
+}
+
+.instruction-container {
+    display: grid;
+    width: 95vw;
+    height: 80vh;
+    padding: 10px;
+    border: 5px solid whitesmoke;
+    border-radius: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 10px auto;
+    column-gap: 5px;
+    place-items: center;
+}
+
+.instruction-steps {
+    border: 2px solid whitesmoke;
+    text-align: center;
+    position: relative;
+    height: 90%;
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+    line-height: 2;
+    padding: 0 20px;
+
+}
+
+.instruction-steps p {
+    margin-bottom: 10px;
+}
