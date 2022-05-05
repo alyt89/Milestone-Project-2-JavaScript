@@ -73,3 +73,33 @@ h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
 .instruction-steps p {
     margin-bottom: 10px;
 }
+
+
+#instruction-two {
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    color: rgba(245, 245, 245, 0)
+}
+
+#instruction-three {
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 4s;
+    color: rgba(245, 245, 245, 0)
+}
+
+@keyframes appear {
+from
+     {
+        color: rgba(245, 245, 245, 0)
+}
+
+to {
+    color: rgba(245, 245, 245)
+
+}
+
+}
