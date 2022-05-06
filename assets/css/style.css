@@ -24,6 +24,11 @@ h1 {
     font-size: 3rem;
 }
 
+h1 a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
 h2 {
     font-size: 1.2rem;
 }
@@ -55,6 +60,8 @@ h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
     margin: 10px auto;
     column-gap: 5px;
     place-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .instruction-steps {
@@ -102,4 +109,39 @@ to {
 
 }
 
+}
+
+#continue {
+    position: absolute;
+    bottom: 5px;
+    padding: 15px 15px;
+    background-color: whitesmoke;
+    color: rgb(10, 10, 10);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* 
+Game 1 */
+
+.game-area {
+    background-color: rgb(36, 34, 34);
+    width: 95vw;
+    height: 80vh;
+    position: absolute;
+    display: grid;
+    grid-template-rows: 1fr 1fr 4fr 1fr;
+    place-items: center;
+}
+
+.game-settings {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.buttons-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
