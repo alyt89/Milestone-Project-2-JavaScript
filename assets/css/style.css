@@ -1,9 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
+:root {
+    --black: rgb(10, 10, 10);
+    --grey: rgb(22, 21, 21);
+    --white: rgb(245, 245, 245);
+    --yellow: rgb(255, 255, 0);
+    --red: rgb(255, 0, 0);
+    --green: rgb(0, 128, 0) ;
+    --blue: rgb(0, 0, 255);
+    --light-black: rgb(10, 10, 10, 0.3);
+    --light-grey: rgb(22, 21, 21, 0.3);
+    --light-white: rgb(245, 245, 245, 0.3);
+    --light-yellow: rgb(255, 255, 0, 0.3);
+    --light-red: rgb(255, 0, 0, 0.3);
+    --light-green: rgb(0, 128, 0, 0.3) ;
+    --light-blue: rgb(0, 0, 255, 0.3);
+}
+
 body {
-background-color: rgb(10, 10, 10);
+background-color: var(--black);
 font-family: 'IBM Plex Mono', sans-serif;
-color: whitesmoke;
+color: var(--white);
 }
 
 * {
@@ -25,7 +42,7 @@ h1 {
 }
 
 h1 a {
-    color: whitesmoke;
+    color: var(--white);
     text-decoration: none;
 }
 
@@ -34,27 +51,27 @@ h2 {
 }
 
 h2 span:nth-of-type(1), h2 span:nth-of-type(8), h2 span:nth-of-type(9) {
-    color: red;
+    color: var(--red);
 }
 
 h2 span:nth-of-type(2), h2 span:nth-of-type(7) {
-    color: green;
+    color: var(--green);
 }
 
 h2 span:nth-of-type(3), h2 span:nth-of-type(5) {
-    color: yellow;
+    color: var(--yellow);
 }
 
 h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
-    color: blue;
+    color: var(--blue);
 }
 
-.instruction-container {
+.instruction-container, .game-container {
     display: grid;
     width: 95vw;
     height: 80vh;
     padding: 10px;
-    border: 5px solid whitesmoke;
+    border: 5px solid var(--white);
     border-radius: 20px;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 10px auto;
@@ -65,7 +82,7 @@ h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
 }
 
 .instruction-steps {
-    border: 2px solid whitesmoke;
+    border: 2px solid var(--white);
     text-align: center;
     position: relative;
     height: 90%;
@@ -87,7 +104,7 @@ h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-delay: 2s;
-    color: rgba(245, 245, 245, 0)
+    color: var(--grey)
 }
 
 #instruction-three {
@@ -95,17 +112,17 @@ h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-delay: 4s;
-    color: rgba(245, 245, 245, 0)
+    color: var(--grey)
 }
 
 @keyframes appear {
 from
      {
-        color: rgba(245, 245, 245, 0)
+        color: var(--grey)
 }
 
 to {
-    color: rgba(245, 245, 245)
+    color: var(--white)
 
 }
 
@@ -116,7 +133,7 @@ to {
     bottom: 5px;
     padding: 15px 15px;
     background-color: whitesmoke;
-    color: rgb(10, 10, 10);
+    color: var(--black);
     text-decoration: none;
     border-radius: 5px;
 }
@@ -125,23 +142,85 @@ to {
 Game 1 */
 
 .game-area {
-    background-color: rgb(36, 34, 34);
+    background-color: var(--grey);
     width: 95vw;
     height: 80vh;
     position: absolute;
     display: grid;
     grid-template-rows: 1fr 1fr 4fr 1fr;
     place-items: center;
+    padding:5px;
 }
 
-.game-settings {
+.game-info {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
+    padding: 0 50px;
 }
 
 .buttons-area {
+    height: 100%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+}
+
+.button {
+    place-self: center;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 1px solid var(--light-white);
+}
+
+.yellow {
+background-color: var(--yellow);
+}
+
+.green {
+    background-color: var(--green);
+}
+
+.blue {
+background-color: var(--blue);
+}
+
+.red {
+    background-color: var(--red);
+}
+        
+.button:hover {
+    border-width: 3px;
+}
+
+.button:active{
+    opacity: 0.6;
+}
+
+
+.colour-display-area {
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+
+.colour-display {
+    height: 90%;
+    width: 300px;
+    border: 1px solid rgba(245, 245, 245, 0.3);
+    border-radius: 5px;
+    background: repeating-linear-gradient(
+  to right,
+  var(--black) 10px,
+  var(--grey) 20px,
+  var(--black) 10px
+
+);
+display: grid;
+}
+
+#colour-display-text {
+    place-self: center;
 }
