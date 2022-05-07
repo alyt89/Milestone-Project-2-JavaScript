@@ -6,6 +6,7 @@ const blueButton = document.getElementById("blue-button");
 const startGame = document.getElementById("start-game");
 const colourDisplayText = document.getElementById("colour-display-text");
 const notStarted = "Colours will appear here. Ready? Click Start.";
+i = 0;
 
 
 function pickRandomColours() {
@@ -24,24 +25,24 @@ newColoursList = pickRandomColours();
 function startGameClick() {
     colourDisplayText.innerHTML = "";  
     startGame.style.visibility = "hidden";
-  
-    
-}
-
-function displayColours() {
 
     if (colourDisplayText.innerHTML === notStarted) {
         console.log("game not started");
     }
-
+  
     else {
-        while (newColoursList.length > 0) {
-            firstColour = newColoursList.shift();
-            colourDisplayText.innerHTML = firstColour;
-            console.log(firstColour);
-            }
-        }
-    
+        setInterval(displayColours, 4000)
+    }
+}
+
+function displayColours() {
+    let i = 0;
+    for (let i = 0; i < newColoursList.length; i++) {
+        firstColour = newColoursList.shift();
+        colourDisplayText.innerHTML = firstColour;
+        console.log(newColoursList);
+    }
+   
 }
 
 
