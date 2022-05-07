@@ -6,13 +6,18 @@ const blueButton = document.getElementById("blue-button");
 const startGame = document.getElementById("start-game");
 const colourDisplayText = document.getElementById("colour-display-text");
 const notStarted = "Colours will appear here. Ready? Click Start.";
-i = 0;
+let i = 0;
+let gameNumber;
+let gameLength;
 
 
 function pickRandomColours() {
-    let i = 0;
+    gameNumber = document.getElementById("game-no").innerText;
+    console.log(gameNumber);
+    gameLength = 6 + parseInt(gameNumber);
+    console.log(gameLength);
     let coloursList = [];
-    while (i < 6) {
+    while (i < gameLength) {
     coloursList.push(colours[Math.floor(Math.random() * 4)]);
     i++;
     }
@@ -31,20 +36,32 @@ function startGameClick() {
     }
   
     else {
-        setInterval(displayColours, 4000)
+        displayColours();
     }
 }
+
 
 function displayColours() {
-    let i = 0;
-    for (let i = 0; i < newColoursList.length; i++) {
-        firstColour = newColoursList.shift();
-        colourDisplayText.innerHTML = firstColour;
-        console.log(newColoursList);
-    }
-   
-}
+    
+console.log(newColoursList);
 
+    let interval = 1000;   
+ 
+
+    newColoursList.forEach(function(el, index) {
+
+        setTimeout(function() {
+            colourDisplayText.innerHTML = el;
+        }, index * interval);
+        timeElapsed = (index * interval);
+        
+    });
+
+    console.log(timeElapsed);
+
+
+}
+   
 
 
 
