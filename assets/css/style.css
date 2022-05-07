@@ -101,42 +101,74 @@ h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
 
 
 #instruction-two {
-    animation-name: appear;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
     animation-delay: 2s;
-    color: var(--grey)
 }
 
 #instruction-three {
-    animation-name: appear;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
     animation-delay: 4s;
-    color: var(--grey)
-}
-
-@keyframes appear {
-from
-     {
-        color: var(--grey)
-}
-
-to {
-    color: var(--white)
-
-}
-
-}
+    }
 
 #continue {
     position: absolute;
     bottom: 5px;
     padding: 15px 15px;
-    background-color: whitesmoke;
+    background-color: var(--black);
     color: var(--black);
     text-decoration: none;
     border-radius: 5px;
+    animation-delay: 6s;
+   z-index: -1;
+}
+
+#instruction-two, #instruction-three, #continue {
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+#instruction-two, #instruction-three {
+    animation-name: appear;
+    color: var(--black);
+}
+
+#continue {
+    animation-name: appear-two;
+}
+
+@keyframes appear {
+    from
+         {
+            color: var(--black)
+    }
+    
+    to {
+        color: var(--white)
+    
+    }
+}
+
+@keyframes appear-two {
+    from
+         {
+            background-color: var(--black);
+            z-index: -1;
+    }
+    
+    to {
+        background-color: var(--white);
+        z-index: 3;
+    }
+}
+
+@media screen and (max-width:600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 0.9em;
+        text-align: center ;
+    }
 }
 
 /* 
@@ -262,5 +294,20 @@ display: grid;
     100% {
         z-index: 3;
         opacity: 1;
+    }
+}
+
+@media screen and (max-width:600px) {
+    h3 {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+
+    .game-info {
+        padding: 0 5px;
+        justify-content: space-around;
     }
 }
