@@ -236,13 +236,13 @@ background-color: var(--blue);
 }
 
 
-.colour-display-area, .user-display-area {
+.colour-display-area{
     display: grid;
     place-items: center;
     height: 100%;
 }
 
-.colour-display, .user-display {
+.colour-display {
     height: 90%;
     width: 300px;
     border: 1px solid rgba(245, 245, 245, 0.3);
@@ -283,6 +283,27 @@ display: grid;
     place-items: center;
     font-size: 2rem;
 }
+
+.submit-area {
+    height: 100%;
+    width: 80%;
+    display: grid;
+    place-items: center;
+}
+
+#submit-button {
+    width: 20%;
+    height: 80%;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--white);
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+
+}
+
 
 
 @keyframes start-appear {
