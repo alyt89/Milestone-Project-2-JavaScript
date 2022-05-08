@@ -4,12 +4,14 @@ const yellowButton = document.getElementById("yellow-button");
 const greenButton = document.getElementById("green-button");
 const blueButton = document.getElementById("blue-button");
 const startGame = document.getElementById("start-game");
+const submitButton = document.getElementById("submit-button");
 const colourDisplayText = document.getElementById("colour-display-text");
 const notStarted = "Colours will appear here. Ready? Click Start.";
 let i = 0;
 let gameNumber;
 let gameLength;
 let userAnswer = [];
+
 
 function pickRandomColours() {
     gameNumber = document.getElementById("game-no").innerText;
@@ -61,33 +63,26 @@ function displayColours() {
 
 startGame.addEventListener("click", startGameClick);
 startGame.addEventListener("click", displayColours);
-greenButton.addEventListener("click", registerGreenButtonClick)
-redButton.addEventListener("click", registerRedButtonClick)
-yellowButton.addEventListener("click", registerYellowButtonClick)
-blueButton.addEventListener("click", registerBlueButtonClick)
+greenButton.addEventListener("click", registerGreenButtonClick);
+redButton.addEventListener("click", registerRedButtonClick);
+yellowButton.addEventListener("click", registerYellowButtonClick);
+blueButton.addEventListener("click", registerBlueButtonClick);
+submitButton.addEventListener("click", checkAnswer);
 
 
-function buttonClicked() {
-
-}
 
 function registerGreenButtonClick() {
     console.log("green button clicked");
     userAnswer.push("green");
     userAnswer.push("");
     console.log(userAnswer);
-    
-
 }
-
-;
 
 function registerBlueButtonClick() {
     console.log("blue button clicked");
     userAnswer.push("blue");
     userAnswer.push("");
     console.log(userAnswer);
-
 };
 
 function registerYellowButtonClick() {
@@ -95,8 +90,6 @@ function registerYellowButtonClick() {
     userAnswer.push("yellow");
     userAnswer.push("");
     console.log(userAnswer);
-
-
 };
 
 function registerRedButtonClick() {
@@ -107,7 +100,17 @@ function registerRedButtonClick() {
 
 };
 
-// function checkAnswer();
+function checkAnswer() {
+    let isSame = newColoursList.length == userAnswer.length && newColoursList.every(function(element, index) {
+        return element === userAnswer[index];
+    });
+
+    if (isSame) {
+        console.log("correct answer")
+    }
+     else {console.log("incorrect answer")}
+     ;
+};
 
 // function displayResult();
 
