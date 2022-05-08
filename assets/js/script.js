@@ -9,7 +9,7 @@ const notStarted = "Colours will appear here. Ready? Click Start.";
 let i = 0;
 let gameNumber;
 let gameLength;
-
+let userAnswer = [];
 
 function pickRandomColours() {
     gameNumber = document.getElementById("game-no").innerText;
@@ -19,6 +19,7 @@ function pickRandomColours() {
     let coloursList = [];
     while (i < gameLength) {
     coloursList.push(colours[Math.floor(Math.random() * 4)]);
+    coloursList.push("");
     i++;
     }
     console.log(coloursList);
@@ -43,22 +44,15 @@ function startGameClick() {
 
 function displayColours() {
     
-console.log(newColoursList);
-
     let interval = 1000;   
- 
 
     newColoursList.forEach(function(el, index) {
 
         setTimeout(function() {
             colourDisplayText.innerHTML = el;
         }, index * interval);
-        timeElapsed = (index * interval);
         
     });
-
-    console.log(timeElapsed);
-
 
 }
    
@@ -67,14 +61,51 @@ console.log(newColoursList);
 
 startGame.addEventListener("click", startGameClick);
 startGame.addEventListener("click", displayColours);
+greenButton.addEventListener("click", registerGreenButtonClick)
+redButton.addEventListener("click", registerRedButtonClick)
+yellowButton.addEventListener("click", registerYellowButtonClick)
+blueButton.addEventListener("click", registerBlueButtonClick)
 
-// function registerGreenButtonClick();
 
-// function registerBlueButtonClick();
+function buttonClicked() {
 
-// function registerYellowButtonClick();
+}
 
-// function registerRedButtonClick();
+function registerGreenButtonClick() {
+    console.log("green button clicked");
+    userAnswer.push("green");
+    userAnswer.push("");
+    console.log(userAnswer);
+    
+
+}
+
+;
+
+function registerBlueButtonClick() {
+    console.log("blue button clicked");
+    userAnswer.push("blue");
+    userAnswer.push("");
+    console.log(userAnswer);
+
+};
+
+function registerYellowButtonClick() {
+    console.log("yellow button clicked");
+    userAnswer.push("yellow");
+    userAnswer.push("");
+    console.log(userAnswer);
+
+
+};
+
+function registerRedButtonClick() {
+    console.log("red button clicked");
+    userAnswer.push("red");
+    userAnswer.push("");
+    console.log(userAnswer);
+
+};
 
 // function checkAnswer();
 
