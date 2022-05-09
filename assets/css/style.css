@@ -242,7 +242,7 @@ background-color: var(--blue);
     height: 100%;
 }
 
-.colour-display {
+#colour-display {
     height: 90%;
     width: 300px;
     border: 1px solid rgba(245, 245, 245, 0.3);
@@ -257,8 +257,9 @@ background-color: var(--blue);
 display: grid;
 }
 
-#colour-display-text, #user-display-text {
+#colour-display-text {
     place-self: center;
+    text-align: center;
 }
 
 #start-game {

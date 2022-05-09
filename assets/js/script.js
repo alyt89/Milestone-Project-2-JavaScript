@@ -6,6 +6,7 @@ const blueButton = document.getElementById("blue-button");
 const startGame = document.getElementById("start-game");
 const submitButton = document.getElementById("submit-button");
 const colourDisplayText = document.getElementById("colour-display-text");
+const colourDisplay = document.getElementById("colour-display");
 const notStarted = "Colours will appear here. Ready? Click Start.";
 let i = 0;
 let gameNumber;
@@ -40,6 +41,7 @@ function startGameClick() {
   
     else {
         displayColours();
+        intervalGap();
     }
 }
 
@@ -59,14 +61,33 @@ function displayColours() {
 }
    
 
+/** To prevent user clicking buttons as the array is being displayed and therefore cheating. 
+ * Code referenced on site https://stackoverflow.com/questions/11363401/javascript-how-to-clear-interval-after-specific-time 
+ * 
+*/
+
+function intervalGap(){
+    let no = 1;
+    setInterval(function(){
+    if(no < newColoursList.length){
+        no++;
+    }else{
+    clearInterval(this);
+    greenButton.addEventListener("click", registerGreenButtonClick);
+    redButton.addEventListener("click", registerRedButtonClick);
+    yellowButton.addEventListener("click", registerYellowButtonClick);
+    blueButton.addEventListener("click", registerBlueButtonClick);
+
+        console.log("finished");
+    }}, 1000); // buttons enabled after the time taken to display the array in colour display area
+}
+
 
 
 startGame.addEventListener("click", startGameClick);
 startGame.addEventListener("click", displayColours);
-greenButton.addEventListener("click", registerGreenButtonClick);
-redButton.addEventListener("click", registerRedButtonClick);
-yellowButton.addEventListener("click", registerYellowButtonClick);
-blueButton.addEventListener("click", registerBlueButtonClick);
+startGame.addEventListener("click", intervalGap)
+
 submitButton.addEventListener("click", checkAnswer);
 
 
@@ -106,9 +127,15 @@ function checkAnswer() {
     });
 
     if (isSame) {
-        console.log("correct answer")
+        console.log("correct answer");
+        colourDisplay.style.background = "green";
+        colourDisplayText.innerHTML = "CORRECT!";
     }
-     else {console.log("incorrect answer")}
+     else {
+         console.log("incorrect answer");
+         colourDisplay.style.background = "red";
+         colourDisplayText.innerHTML = "INCORRECT :( ";
+        }
      ;
 };
 
