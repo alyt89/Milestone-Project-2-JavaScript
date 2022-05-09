@@ -12,6 +12,8 @@ let i = 0;
 let gameNumber;
 let gameLength;
 let userAnswer = [];
+let oldScore = 0;
+let gamesPlayed = 0;
 
 
 function pickRandomColours() {
@@ -78,8 +80,8 @@ function intervalGap(){
     yellowButton.addEventListener("click", registerYellowButtonClick);
     blueButton.addEventListener("click", registerBlueButtonClick);
 
-        console.log("finished");
-    }}, 1000); // buttons enabled after the time taken to display the array in colour display area
+
+    }}, 100); // buttons enabled after the time taken to display the array in colour display area
 }
 
 
@@ -130,19 +132,28 @@ function checkAnswer() {
         console.log("correct answer");
         colourDisplay.style.background = "green";
         colourDisplayText.innerHTML = "CORRECT!";
+        increaseScore();
     }
      else {
          console.log("incorrect answer");
          colourDisplay.style.background = "red";
          colourDisplayText.innerHTML = "INCORRECT :( ";
+         nextGame();
         }
      ;
 };
 
-// function displayResult();
 
-// function increaseScore();
+function increaseScore() {
+    let oldScore = parseInt(document.getElementById("correct-attempts").innerText);
+    document.getElementById("correct-attempts").innerText = ++oldScore;
+    nextGame();
 
-// function nextGame();
+}
+
+function nextGame() {
+    let currentGame = parseInt(document.getElementById("attempts").innerText);
+    document.getElementById("attempts").innerText = ++currentGame;
+};
 
 
