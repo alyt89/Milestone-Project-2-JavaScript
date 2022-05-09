@@ -90,9 +90,13 @@ h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
     border-radius: 20px;
     display: grid;
     place-items: center;
-    line-height: 2;
+    line-height: 1.3;
     padding: 0 20px;
 
+}
+
+.instruction-text {
+    font-size: 1em;
 }
 
 .instruction-steps p {
@@ -160,6 +164,16 @@ h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
     }
 }
 
+@media screen and (max-width:900px) {
+    p {
+        font-size: 0.8em;
+    }
+
+    .instruction-steps {
+        padding: 0 10px;
+    }
+}
+
 @media screen and (max-width:600px) {
     h1 {
         font-size: 1.5em;
@@ -168,6 +182,28 @@ h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
     h2 {
         font-size: 0.9em;
         text-align: center ;
+    }
+
+    p {
+        font-size: 0.7em;
+    }
+
+    .instruction-steps {
+        padding: 0 2px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    
+    .instruction-container {
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr 1fr;
+        font-size: 0.7em;
+    }
+
+    #continue {
+        bottom: 0px;
+        padding: 5px;
     }
 }
 
