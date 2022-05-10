@@ -9,6 +9,7 @@ const submitButton = document.getElementById("submit-button");
 const colourDisplayText = document.getElementById("colour-display-text");
 const colourDisplay = document.getElementById("colour-display");
 const notStarted = "Colours will appear here. Ready? Click Start.";
+const gameContainer = document.getElementById("game-container");
 let levelNumber = parseInt(document.getElementById("level").innerText);
 let i = 0;
 let gameNumber;
@@ -57,7 +58,7 @@ function startGameClick() {
 
 function displayColours() {
   
-    let interval = 1000;   
+    let interval = 1000; //1s per colour displayed.  
 
     newColoursList.forEach(function(el, index) {
 
@@ -88,7 +89,7 @@ function intervalGap(){
     blueButton.addEventListener("click", registerBlueButtonClick);
 
 
-    }}, 100); // buttons enabled after the time taken to display the array in colour display area
+    }}, (1000 / levelNumber)); // buttons enabled after the time taken to display the array in colour display area
 }
 
 
@@ -107,9 +108,11 @@ function registerGreenButtonClick() {
     userAnswer.push("green");
     userAnswer.push("");
     colourDisplayText.innerHTML = "green";
-    colourDisplayText.style.animationName = "appear";
-    colourDisplayText.style.animationDuration = "0.5s";
-    colourDisplayText.style.animationFillMode = "forwards";
+
+    setTimeout(function() {
+        colourDisplayText.innerHTML = "";
+    },500);
+
     console.log(userAnswer);
 }
 
@@ -118,9 +121,11 @@ function registerBlueButtonClick() {
     userAnswer.push("blue");
     userAnswer.push("");
     colourDisplayText.innerHTML = "blue";
-    colourDisplayText.style.animationName = "appear";
-    colourDisplayText.style.animationDuration = "0.5s";
-    colourDisplayText.style.animationFillMode = "forwards";
+
+    setTimeout(function() {
+        colourDisplayText.innerHTML = "";
+    },500);
+
     console.log(userAnswer);
 };
 
@@ -129,9 +134,11 @@ function registerYellowButtonClick() {
     userAnswer.push("yellow");
     userAnswer.push("");
     colourDisplayText.innerHTML = "yellow";
-    colourDisplayText.style.animationName = "appear";
-    colourDisplayText.style.animationDuration = "0.5s";
-    colourDisplayText.style.animationFillMode = "forwards";
+
+    setTimeout(function() {
+        colourDisplayText.innerHTML = "";
+    },500);
+
     console.log(userAnswer);
 };
 
@@ -140,9 +147,11 @@ function registerRedButtonClick() {
     userAnswer.push("red");
     userAnswer.push("");
     colourDisplayText.innerHTML = "red";
-    colourDisplayText.style.animationName = "appear";
-    colourDisplayText.style.animationDuration = "0.5s";
-    colourDisplayText.style.animationFillMode = "forwards";
+
+    setTimeout(function() {
+        colourDisplayText.innerHTML = "";
+    },500);
+
     console.log(userAnswer);
 
 };
@@ -177,12 +186,37 @@ function increaseScore() {
 }
 
 function nextGame() {
-    let currentGame = parseInt(document.getElementById("attempts").innerText);
-    document.getElementById("attempts").innerText = ++currentGame;
-    document.getElementById("game-no").innerText = ++gameNumber;
-    startGame.innerHTML = "Next Game";
-    startGame.style.visibility = "visible";
-   userAnswer = [];
+
+    if (gameNumber === 5) {
+        nextLevel();
+    }
+    else {
+        let currentGame = parseInt(document.getElementById("attempts").innerText);
+        document.getElementById("attempts").innerText = ++currentGame;
+        document.getElementById("game-no").innerText = ++gameNumber;
+        startGame.innerHTML = "Next Game";
+        startGame.style.visibility = "visible";
+        userAnswer = [];
+    }
+
 };
 
+
+function nextLevel() {
+    console.log("entering Next Level");
+    let levelTwo = document.createElement("div");
+    gameContainer.appendChild(levelTwo);
+    levelTwo.setAttribute("id","level-two");
+    levelTwo.innerHTML = "Level 2";
+    let levelTwoContinueButton = document.createElement("div");
+    levelTwo.appendChild(levelTwoContinueButton);
+    levelTwoContinueButton.setAttribute("id", "continue");
+    levelTwoContinueButton.innerHTML = "Continue";
+    levelTwoContinueButton.addEventListener("click", closeNextLevel)
+
+    function closeNextLevel() {
+        let levelTwo = document.getElementById("level-two");
+        levelTwo.remove();
+    }
+}
 

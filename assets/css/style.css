@@ -67,7 +67,7 @@ h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
     color: var(--blue);
 }
 
-.instruction-container, .game-container {
+.instruction-container, #game-container {
     display: grid;
     width: 95vw;
     height: 75vh;
@@ -303,8 +303,8 @@ display: grid;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    height: 70px;
-    width: 140px;
+    height: 100px;
+    width: 150px;
     background: var(--white);
     border-radius: 10px;
     animation-name: start-appear;
@@ -315,10 +315,12 @@ display: grid;
     color:var(--black);
     cursor: pointer;
     display: grid;
-    place-items: center;
-    font-size: 2rem;
+    place-content: center;
+    text-align: center;
+    font-size: 1.8rem;
     box-shadow: 5px 10px var(--black);
 }
+
 
 
 .submit-area {
@@ -336,10 +338,17 @@ display: grid;
     border-radius: 20px;
     border: 1px solid var(--white);
     cursor: pointer;
-    text-align: center;
     padding: 5px;
+    display: grid;
+    place-items: center;
 }
 
+#submit-button:hover {
+
+    background-color: var(--white);
+    color: var(--black);
+    border: 1px solid var(--black);
+}
 
 
 @keyframes start-appear {
@@ -369,21 +378,15 @@ display: grid;
     }
 }
 
-@keyframes fade {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
 
-@keyframes appear {
-    0% {
-        visibility: visible;
-    }
-    
-    100% {
-        visibility: hidden;
-    }
+#level-two {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    font-size: 3rem;
+    background: var(--black);
+    z-index: 5;
 }
