@@ -215,6 +215,8 @@ function nextLevel() {
     function closeNextLevel() {
         let levelTwo = document.getElementById("level-two");
         levelTwo.remove();
+        let currentGame = parseInt(document.getElementById("attempts").innerText);
+        document.getElementById("attempts").innerText = ++currentGame;
         document.getElementById("level").innerText = ++levelNumber;
         document.getElementById("game-no").innerText = "1";
         gameNumber = 1;
