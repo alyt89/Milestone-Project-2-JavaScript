@@ -75,6 +75,7 @@ The font used for headings was IBM Plex Mono.
 
 ### Footer
 
+- Link to GitHub profile added at bottom of page.
 
 
 
@@ -91,6 +92,10 @@ The HTML on all pages was validated by testing through https://validator.w3.org/
 CSS validation was done via Jigsaw validator on the following link with no errors found: https://jigsaw.w3.org/css-validator/#validate_by_input
 
 ![Responsive screenshot]
+
+## JS Hint
+
+JavaScript validator (JS Hint) used to check the javascript and this returned the following warnings regarding use of const and let keywords (compatability with certain extensions) and template literals (again re compatability with certain extensions).
 
 ## Lighthouse
 
