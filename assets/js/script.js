@@ -19,6 +19,10 @@ let gamesPlayed = 0;
 
 function pickRandomColours() {
     i = 0;
+    colourDisplay.style.background =  `repeating-linear-gradient(to right,var(--black) 10px,
+        var(--grey) 20px,
+        var(--black) 10px
+      )`;
     gameNumber = parseInt(document.getElementById("game-no").innerText);
     console.log(gameNumber);
     gameLength = 6 + gameNumber;
@@ -142,8 +146,6 @@ function checkAnswer() {
          console.log("incorrect answer");
          colourDisplay.style.background = "red";
          colourDisplayText.innerHTML = "INCORRECT :( ";
-
-         document.getElementById("game-no").innerText = ++gameNumber;
          nextGame();
         }
      ;
@@ -161,8 +163,9 @@ function nextGame() {
     let currentGame = parseInt(document.getElementById("attempts").innerText);
     document.getElementById("attempts").innerText = ++currentGame;
     document.getElementById("game-no").innerText = ++gameNumber;
-    pickRandomColours();
-   
+    startGame.innerHTML = "Next Game";
+    startGame.style.visibility = "visible";
+   userAnswer = [];
 };
 
 

@@ -288,7 +288,6 @@ background-color: var(--blue);
   var(--black) 10px,
   var(--grey) 20px,
   var(--black) 10px
-
 );
 display: grid;
 }
