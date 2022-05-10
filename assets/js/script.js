@@ -10,6 +10,7 @@ const colourDisplayText = document.getElementById("colour-display-text");
 const colourDisplay = document.getElementById("colour-display");
 const notStarted = "Colours will appear here. Ready? Click Start.";
 const gameContainer = document.getElementById("game-container");
+let interval = 1000;
 let levelNumber = parseInt(document.getElementById("level").innerText);
 let i = 0;
 let gameNumber;
@@ -44,14 +45,16 @@ function pickRandomColours() {
 function startGameClick() {
     colourDisplayText.innerHTML = "";  
     startGame.style.visibility = "hidden";
+    greenButton.removeEventListener("click", registerGreenButtonClick);
+    blueButton.removeEventListener("click", registerBlueButtonClick);
+    yellowButton.removeEventListener("click", registerYellowButtonClick);
+    redButton.removeEventListener("click", registerRedButtonClick);
     pickRandomColours();
 
 }
 
 
 function displayColours() {
-  
-    let interval = 1000; //1s per colour displayed.  
 
     newColoursList.forEach(function(el, index) {
 
@@ -69,20 +72,15 @@ function displayColours() {
  * 
 */
 
-function intervalGap(){
-    let no = 1;
-    setInterval(function(){
-    if(no < newColoursList.length){
-        no++;
-    }else{
-    clearInterval(this);
+function intervalGap() {
+
+setTimeout(function(){
     greenButton.addEventListener("click", registerGreenButtonClick);
+    blueButton.addEventListener("click", registerBlueButtonClick);
     redButton.addEventListener("click", registerRedButtonClick);
     yellowButton.addEventListener("click", registerYellowButtonClick);
-    blueButton.addEventListener("click", registerBlueButtonClick);
+        }, (newColoursList.length * (interval / levelNumber))); 
 
-
-    }}, (1000 / levelNumber)); // buttons enabled after the time taken to display the array in colour display area
 }
 
 
@@ -219,6 +217,7 @@ function nextLevel() {
         levelTwo.remove();
         document.getElementById("level").innerText = ++levelNumber;
         document.getElementById("game-no").innerText = "1";
+        gameNumber = 1;
         colourDisplay.style.background = "";
         colourDisplayText.innerHTML = "Colours will appear here. Ready? Click Start.";
         startGame.innerHTML = "Start";
