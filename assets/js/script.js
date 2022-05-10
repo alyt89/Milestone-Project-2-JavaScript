@@ -4,6 +4,7 @@ const yellowButton = document.getElementById("yellow-button");
 const greenButton = document.getElementById("green-button");
 const blueButton = document.getElementById("blue-button");
 const startGame = document.getElementById("start-game");
+const nextGameButton = document.getElementById("next-game");
 const submitButton = document.getElementById("submit-button");
 const colourDisplayText = document.getElementById("colour-display-text");
 const colourDisplay = document.getElementById("colour-display");
@@ -17,9 +18,10 @@ let gamesPlayed = 0;
 
 
 function pickRandomColours() {
-    gameNumber = document.getElementById("game-no").innerText;
+    i = 0;
+    gameNumber = parseInt(document.getElementById("game-no").innerText);
     console.log(gameNumber);
-    gameLength = 6 + parseInt(gameNumber);
+    gameLength = 6 + gameNumber;
     console.log(gameLength);
     let coloursList = [];
     while (i < gameLength) {
@@ -27,11 +29,12 @@ function pickRandomColours() {
     coloursList.push("");
     i++;
     }
-    console.log(coloursList);
+    newColoursList = coloursList;
+    console.log(newColoursList);
+    displayColours();
+    intervalGap();
     return coloursList;
 }
-
-newColoursList = pickRandomColours();
 
 function startGameClick() {
     colourDisplayText.innerHTML = "";  
@@ -42,8 +45,7 @@ function startGameClick() {
     }
   
     else {
-        displayColours();
-        intervalGap();
+        pickRandomColours();
     }
 }
 
@@ -90,6 +92,7 @@ startGame.addEventListener("click", startGameClick);
 startGame.addEventListener("click", displayColours);
 startGame.addEventListener("click", intervalGap)
 
+
 submitButton.addEventListener("click", checkAnswer);
 
 
@@ -132,12 +135,15 @@ function checkAnswer() {
         console.log("correct answer");
         colourDisplay.style.background = "green";
         colourDisplayText.innerHTML = "CORRECT!";
+
         increaseScore();
     }
      else {
          console.log("incorrect answer");
          colourDisplay.style.background = "red";
          colourDisplayText.innerHTML = "INCORRECT :( ";
+
+         document.getElementById("game-no").innerText = ++gameNumber;
          nextGame();
         }
      ;
@@ -154,6 +160,9 @@ function increaseScore() {
 function nextGame() {
     let currentGame = parseInt(document.getElementById("attempts").innerText);
     document.getElementById("attempts").innerText = ++currentGame;
+    document.getElementById("game-no").innerText = ++gameNumber;
+    pickRandomColours();
+   
 };
 
 
