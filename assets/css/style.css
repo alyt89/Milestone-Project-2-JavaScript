@@ -379,7 +379,7 @@ display: grid;
 }
 
 
-#level-two {
+#level-two, #final-score-display {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -389,4 +389,16 @@ display: grid;
     font-size: 3rem;
     background: var(--black);
     z-index: 5;
+
+}
+
+@keyframes leveltwo {
+
+    0% {
+        z-index: -5
+    }
+    
+    100% {
+        z-index: 5;
+    }
 }

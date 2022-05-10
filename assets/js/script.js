@@ -16,7 +16,6 @@ let gameNumber;
 let gameLength;
 let userAnswer = [];
 let oldScore = 0;
-let gamesPlayed = 0;
 
 
 function pickRandomColours() {
@@ -26,9 +25,9 @@ function pickRandomColours() {
         var(--black) 10px
       )`;
     gameNumber = parseInt(document.getElementById("game-no").innerText);
-    console.log(gameNumber);
-    gameLength = 6 + gameNumber;
-    console.log(gameLength);
+
+    gameLength = 4 + gameNumber;
+
     let coloursList = [];
     while (i < gameLength) {
     coloursList.push(colours[Math.floor(Math.random() * 4)]);
@@ -36,7 +35,7 @@ function pickRandomColours() {
     i++;
     }
     newColoursList = coloursList;
-    console.log(newColoursList);
+
     displayColours();
     intervalGap();
     return coloursList;
@@ -45,14 +44,8 @@ function pickRandomColours() {
 function startGameClick() {
     colourDisplayText.innerHTML = "";  
     startGame.style.visibility = "hidden";
+    pickRandomColours();
 
-    if (colourDisplayText.innerHTML === notStarted) {
-        console.log("game not started");
-    }
-  
-    else {
-        pickRandomColours();
-    }
 }
 
 
@@ -165,7 +158,6 @@ function checkAnswer() {
         console.log("correct answer");
         colourDisplay.style.background = "green";
         colourDisplayText.innerHTML = "CORRECT!";
-
         increaseScore();
     }
      else {
@@ -187,8 +179,12 @@ function increaseScore() {
 
 function nextGame() {
 
-    if (gameNumber === 5) {
+    if (gameNumber === 5 && levelNumber != 2) {
         nextLevel();
+    }
+
+    else if (gameNumber === 5 && levelNumber === 2) {
+        finalScore();
     }
     else {
         let currentGame = parseInt(document.getElementById("attempts").innerText);
@@ -203,20 +199,45 @@ function nextGame() {
 
 
 function nextLevel() {
-    console.log("entering Next Level");
-    let levelTwo = document.createElement("div");
-    gameContainer.appendChild(levelTwo);
-    levelTwo.setAttribute("id","level-two");
-    levelTwo.innerHTML = "Level 2";
-    let levelTwoContinueButton = document.createElement("div");
-    levelTwo.appendChild(levelTwoContinueButton);
-    levelTwoContinueButton.setAttribute("id", "continue");
-    levelTwoContinueButton.innerHTML = "Continue";
-    levelTwoContinueButton.addEventListener("click", closeNextLevel)
+    setTimeout(function() {
+
+        let levelTwo = document.createElement("div");
+        gameContainer.appendChild(levelTwo);
+        levelTwo.setAttribute("id","level-two");
+        levelTwo.innerHTML = "Level 2";
+        let levelTwoContinueButton = document.createElement("div");
+        levelTwo.appendChild(levelTwoContinueButton);
+        levelTwoContinueButton.setAttribute("id", "continue");
+        levelTwoContinueButton.innerHTML = "Continue";
+        levelTwoContinueButton.style.animationDelay = "2s";
+        levelTwoContinueButton.addEventListener("click", closeNextLevel)
+    },2000);
+
 
     function closeNextLevel() {
         let levelTwo = document.getElementById("level-two");
         levelTwo.remove();
+        document.getElementById("level").innerText = ++levelNumber;
+        document.getElementById("game-no").innerText = "1";
+        colourDisplay.style.background = "";
+        colourDisplayText.innerHTML = "Colours will appear here. Ready? Click Start.";
+        startGame.innerHTML = "Start";
+        startGame.style.visibility = "visible";
     }
+
+    
+
 }
 
+function finalScore() {
+
+    setTimeout(function() {    
+    let finalScoreDisplay = document.createElement("div");
+    gameContainer.appendChild(finalScoreDisplay);
+    finalScoreDisplay.setAttribute("id","final-score-display");
+    let finalScore = parseInt(document.getElementById("correct-attempts").innerText);
+    finalScoreDisplay.innerHTML = `Your Final score is ${finalScore} out of 10`;
+        
+    },2000)
+
+}
