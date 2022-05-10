@@ -1,108 +1,170 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Colour Recall
 
-Welcome alyt89,
+![Responsive screenshot](/assets/images/colour-recall-responsive.png)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# Site aim
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+This website is created as a memory game where the user has to remember a sequence of colours displayed.
 
-## Gitpod Reminders
+There are 2 levels and 5 games in each level with each game and level getting progressively more tricky.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+This site is created using 3 languages: HTML, CSS and JavaScript.
 
-`python3 -m http.server`
+This is the second of 5 projects as part of the Diploma in Software Development from Codeinstitute.
 
-A blue button should appear to click: _Make Public_,
+A link to the live website can be found here:
 
-Another blue button should appear to click: _Open Browser_.
+https://alyt89.github.io/Milestone-Project-2-JavaScript/game.html
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+# User goals
 
-Another blue button should appear to click: _Open Browser_.
+The website is expected to attract users who:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- Enjoy memory games without being too complex.
 
-To log into the Heroku toolbelt CLI:
+- Want to enjoy a quick, fun and easy game.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+The website will allow users to:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- Progress through the games and levels and see if they can get a good score.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- With future enhancements compete against others to get higher up the leaderboard.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Requirements
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+This project required creating an interactive website and documenting its progress through GitHub. Interactive elements through the use of JavaScript were required as part of the project.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Color scheme
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+The colour scheme on the project is quite retro in look. With the game itself being based on 4 primary colours (red, green, blue and yellow) the backdrop was set as black and white to provide a distinct contrast.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+The colours are stored as variables in the CSS file and used throughout from these variables.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Fonts
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+The fonts used were taken from Google Fonts and applied throughout the project.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+The font used for headings was IBM Plex Mono.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+# Site features
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Intro / Game rules page
 
-------
+## Game page
 
-## FAQ about the uptime script
+### Main Game Area
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
+### Game Info details
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Final Score
 
-**Can I opt out?**
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Footer
 
-**Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
 
-Happy coding!
+# Testing
+
+## HTML validator
+
+The HTML on all pages was validated by testing through https://validator.w3.org/#validate_by_input with no errors found as shown below:
+
+![Responsive screenshot]
+
+## CSS validator
+
+CSS validation was done via Jigsaw validator on the following link with no errors found: https://jigsaw.w3.org/css-validator/#validate_by_input
+
+![Responsive screenshot]
+
+## Lighthouse
+
+Testing was done via Lighthouse and scored as below on Desktop and Mobile:
+
+### Desktop:
+
+![Responsive screenshot]
+
+
+### Mobile:
+
+![Responsive screenshot]
+
+
+The site has been tested on Google Chrome, FireFox and Microsoft Edge. It has also been tested on a mobile device to check the responsiveness.
+
+Throughout the development of the site I have used Google DevTools to ensure that the responsiveness is working and any bugs encountered are identified during development.
+
+There have been regular commits to github with clear remarks on each update to easily track progress of the project.
+
+All links both internal and external have been tested and any external links open in a new tab to maintain good user experience.
+
+The site has also been tested by an impartial user to test for intuitiveness, ease of use and layout/visibility issues. One issue raised from this was the text contrast on one of the visual links and this was subsequently resolved by increasing opacity/constrast.
+
+## Main issues discovered and resolved
+
+1. Duplicate colours in list
+
+- I wanted the game to include the option of the same colour being displayed consecutively in the array however when this was displayed in the "colour-display" div since there was no gap between each element in the array it wasn't clear that 2 consecutive colours of the same value were 2 rather than 1.
+
+- Initial attempt was to utilise setTimeOut or setInterval function to create a delay and reset innerHTML to "" (blank text) but this was asynchronous.
+
+- This was fixed by adding empty strings to the array after every other colour and registering the user's answers with an empty string after each guess also.
+
+2. Disabling click events and submit button while colours displayed
+
+- While the colour sequence was being displayed users could start clicking the buttons in real time and therefore cheat rather than memorise the sequence.
+
+- This was fixed by using the setTimeOut function to delay the 4 colour buttons and submit button until the sequence had finished. 
+
+
+
+
+
+# Deployment
+
+This project was hosted and deployed on GitHub, steps taken to deploy are as follows:
+
+- Open relevant GitHub repository and navigate to 'Settings' tab.
+
+- Navigate to 'Pages' option located in the 'Code and Automation' section 
+
+- Under 'Source' heading select the main branch and 'root' folder, once done click 'save'
+
+- Refresh page until the active URL is provided
+
+
+# Future site enhancements
+
+- More levels with increased speed and longer lists of colours to remember.
+
+- Higher levels could introduce a random font colour to each entry to further challenge the user so they would have to memorise the colour of the font and not the word displayed or vice versa.
+
+- A leaderboard and/or a history of prior attempts by the user.
+
+# Credits
+
+Through the development of this site I have used various resources to help me especially when applying the Grid and Flexbox principles, the guidance on https://css-tricks.com/snippets/css/a-guide-to-flexbox/ and https://css-tricks.com/snippets/css/complete-guide-grid/#prop-grid-template were particularly helpful for this.
+
+In addition I have used the W3Schools website to assist with general HTML and CSS queries such as Z-index and position.
+
+Specific credits are noted in the CSS file for animations on the home and gallery pages.
+
+## Images
+
+Images were sourced from a combination of https://unsplash.com/ and Google Images. As Ski Cross is quite a unique sport there were limited images for specific elements of Ski Cross that were required for the gallery page and therefore Google Images was required.

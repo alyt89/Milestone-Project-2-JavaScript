@@ -4,19 +4,17 @@ const yellowButton = document.getElementById("yellow-button");
 const greenButton = document.getElementById("green-button");
 const blueButton = document.getElementById("blue-button");
 const startGame = document.getElementById("start-game");
-const nextGameButton = document.getElementById("next-game");
 const submitButton = document.getElementById("submit-button");
 const colourDisplayText = document.getElementById("colour-display-text");
 const colourDisplay = document.getElementById("colour-display");
-const notStarted = "Colours will appear here. Ready? Click Start.";
 const gameContainer = document.getElementById("game-container");
 let interval = 1000;
 let levelNumber = parseInt(document.getElementById("level").innerText);
 let i = 0;
+let newColoursList;
 let gameNumber;
 let gameLength;
 let userAnswer = [];
-let oldScore = 0;
 
 
 function pickRandomColours() {
@@ -49,6 +47,7 @@ function startGameClick() {
     blueButton.removeEventListener("click", registerBlueButtonClick);
     yellowButton.removeEventListener("click", registerYellowButtonClick);
     redButton.removeEventListener("click", registerRedButtonClick);
+    submitButton.removeEventListener("click", checkAnswer);
     pickRandomColours();
 
 }
@@ -79,6 +78,7 @@ setTimeout(function(){
     blueButton.addEventListener("click", registerBlueButtonClick);
     redButton.addEventListener("click", registerRedButtonClick);
     yellowButton.addEventListener("click", registerYellowButtonClick);
+    submitButton.addEventListener("click", checkAnswer);
         }, (newColoursList.length * (interval / levelNumber))); 
 
 }
@@ -87,10 +87,8 @@ setTimeout(function(){
 
 startGame.addEventListener("click", startGameClick);
 startGame.addEventListener("click", displayColours);
-startGame.addEventListener("click", intervalGap)
+startGame.addEventListener("click", intervalGap);
 
-
-submitButton.addEventListener("click", checkAnswer);
 
 
 
@@ -118,7 +116,7 @@ function registerBlueButtonClick() {
     },500);
 
     console.log(userAnswer);
-};
+}
 
 function registerYellowButtonClick() {
     console.log("yellow button clicked");
@@ -131,7 +129,7 @@ function registerYellowButtonClick() {
     },500);
 
     console.log(userAnswer);
-};
+}
 
 function registerRedButtonClick() {
     console.log("red button clicked");
@@ -145,7 +143,7 @@ function registerRedButtonClick() {
 
     console.log(userAnswer);
 
-};
+}
 
 function checkAnswer() {
     let isSame = newColoursList.length == userAnswer.length && newColoursList.every(function(element, index) {
@@ -164,8 +162,7 @@ function checkAnswer() {
          colourDisplayText.innerHTML = "INCORRECT :( ";
          nextGame();
         }
-     ;
-};
+}
 
 
 function increaseScore() {
@@ -193,7 +190,7 @@ function nextGame() {
         userAnswer = [];
     }
 
-};
+}
 
 
 function nextLevel() {
@@ -208,7 +205,7 @@ function nextLevel() {
         levelTwoContinueButton.setAttribute("id", "continue");
         levelTwoContinueButton.innerHTML = "Continue";
         levelTwoContinueButton.style.animationDelay = "2s";
-        levelTwoContinueButton.addEventListener("click", closeNextLevel)
+        levelTwoContinueButton.addEventListener("click", closeNextLevel);
     },2000);
 
 
@@ -232,13 +229,14 @@ function nextLevel() {
 
 function finalScore() {
 
-    setTimeout(function() {    
+    setTimeout(function() {   
+
     let finalScoreDisplay = document.createElement("div");
     gameContainer.appendChild(finalScoreDisplay);
     finalScoreDisplay.setAttribute("id","final-score-display");
     let finalScore = parseInt(document.getElementById("correct-attempts").innerText);
     finalScoreDisplay.innerHTML = `Your Final score is ${finalScore} out of 10`;
-        
-    },2000)
+    
+    },2000);
 
 }
