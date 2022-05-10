@@ -9,6 +9,7 @@ const submitButton = document.getElementById("submit-button");
 const colourDisplayText = document.getElementById("colour-display-text");
 const colourDisplay = document.getElementById("colour-display");
 const notStarted = "Colours will appear here. Ready? Click Start.";
+let levelNumber = parseInt(document.getElementById("level").innerText);
 let i = 0;
 let gameNumber;
 let gameLength;
@@ -55,14 +56,14 @@ function startGameClick() {
 
 
 function displayColours() {
-    
+  
     let interval = 1000;   
 
     newColoursList.forEach(function(el, index) {
 
         setTimeout(function() {
             colourDisplayText.innerHTML = el;
-        }, index * interval);
+        }, index * (interval / levelNumber));
         
     });
 
@@ -105,6 +106,10 @@ function registerGreenButtonClick() {
     console.log("green button clicked");
     userAnswer.push("green");
     userAnswer.push("");
+    colourDisplayText.innerHTML = "green";
+    colourDisplayText.style.animationName = "appear";
+    colourDisplayText.style.animationDuration = "0.5s";
+    colourDisplayText.style.animationFillMode = "forwards";
     console.log(userAnswer);
 }
 
@@ -112,6 +117,10 @@ function registerBlueButtonClick() {
     console.log("blue button clicked");
     userAnswer.push("blue");
     userAnswer.push("");
+    colourDisplayText.innerHTML = "blue";
+    colourDisplayText.style.animationName = "appear";
+    colourDisplayText.style.animationDuration = "0.5s";
+    colourDisplayText.style.animationFillMode = "forwards";
     console.log(userAnswer);
 };
 
@@ -119,6 +128,10 @@ function registerYellowButtonClick() {
     console.log("yellow button clicked");
     userAnswer.push("yellow");
     userAnswer.push("");
+    colourDisplayText.innerHTML = "yellow";
+    colourDisplayText.style.animationName = "appear";
+    colourDisplayText.style.animationDuration = "0.5s";
+    colourDisplayText.style.animationFillMode = "forwards";
     console.log(userAnswer);
 };
 
@@ -126,6 +139,10 @@ function registerRedButtonClick() {
     console.log("red button clicked");
     userAnswer.push("red");
     userAnswer.push("");
+    colourDisplayText.innerHTML = "red";
+    colourDisplayText.style.animationName = "appear";
+    colourDisplayText.style.animationDuration = "0.5s";
+    colourDisplayText.style.animationFillMode = "forwards";
     console.log(userAnswer);
 
 };

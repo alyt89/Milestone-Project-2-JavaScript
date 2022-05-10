@@ -234,6 +234,7 @@ Game 1 */
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    position: relative;
 }
 
 .button {
@@ -305,8 +306,6 @@ display: grid;
     height: 70px;
     width: 140px;
     background: var(--white);
-    outline: 1px solid var(--black);
-    outline-offset: -5px;
     border-radius: 10px;
     animation-name: start-appear;
     animation-duration: 4s;
@@ -318,6 +317,7 @@ display: grid;
     display: grid;
     place-items: center;
     font-size: 2rem;
+    box-shadow: 5px 10px var(--black);
 }
 
 
@@ -329,16 +329,15 @@ display: grid;
 }
 
 #submit-button {
-    width: 20%;
-    height: 80%;
+    width: 100px;
+    height: 40px;
     background-color: var(--black);
     color: var(--white);
     border-radius: 20px;
     border: 1px solid var(--white);
     cursor: pointer;
     text-align: center;
-    padding: 10px;
-
+    padding: 5px;
 }
 
 
@@ -376,5 +375,15 @@ display: grid;
     }
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes appear {
+    0% {
+        visibility: visible;
+    }
+    
+    100% {
+        visibility: hidden;
     }
 }
