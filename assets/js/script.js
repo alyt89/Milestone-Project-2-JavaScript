@@ -48,6 +48,10 @@ function startGameClick() {
     yellowButton.removeEventListener("click", registerYellowButtonClick);
     redButton.removeEventListener("click", registerRedButtonClick);
     submitButton.removeEventListener("click", checkAnswer);
+    greenButton.style.opacity = "0.5";
+    blueButton.style.opacity = "0.5";
+    yellowButton.style.opacity = "0.5";
+    redButton.style.opacity = "0.5";
     pickRandomColours();
 
 }
@@ -78,6 +82,10 @@ setTimeout(function(){
     blueButton.addEventListener("click", registerBlueButtonClick);
     redButton.addEventListener("click", registerRedButtonClick);
     yellowButton.addEventListener("click", registerYellowButtonClick);
+    greenButton.style.opacity = "1";
+    blueButton.style.opacity = "1";
+    yellowButton.style.opacity = "1";
+    redButton.style.opacity = "1";
     submitButton.addEventListener("click", checkAnswer);
         }, (newColoursList.length * (interval / levelNumber))); 
 
