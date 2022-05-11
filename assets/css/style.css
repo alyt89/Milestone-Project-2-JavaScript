@@ -108,8 +108,8 @@ h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
 
 #continue {
     position: absolute;
-    bottom: 5px;
-    padding: 15px 15px;
+    bottom: 20px;
+    padding: 10px 10px;
     background-color: var(--black);
     color: var(--black);
     text-decoration: none;
@@ -185,7 +185,7 @@ h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
     }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:650px) {
     h1 {
         font-size: 1.5em;
     }
@@ -202,6 +202,10 @@ h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
     .instruction-steps {
         padding: 0 2px;
     }
+
+    #continue {
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -209,12 +213,12 @@ h2 span:nth-of-type(4), h2 span:nth-of-type(6) {
     .instruction-container {
         grid-template-columns: auto;
         grid-template-rows: 1fr 1fr 1fr;
-        font-size: 0.7em;
+        font-size: 0.6em;
     }
 
     #continue {
-        bottom: 0px;
-        padding: 5px;
+        bottom: 20px;
+        padding: 2px;
     }
 }
 

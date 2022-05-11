@@ -195,7 +195,6 @@ function nextGame() {
 
 function nextLevel() {
     setTimeout(function() {
-
         let levelTwo = document.createElement("div");
         gameContainer.appendChild(levelTwo);
         levelTwo.setAttribute("id","level-two");
@@ -207,7 +206,6 @@ function nextLevel() {
         levelTwoContinueButton.style.animationDelay = "2s";
         levelTwoContinueButton.addEventListener("click", closeNextLevel);
     },2000);
-
 
     function closeNextLevel() {
         let levelTwo = document.getElementById("level-two");
@@ -222,21 +220,34 @@ function nextLevel() {
         startGame.innerHTML = "Start";
         startGame.style.visibility = "visible";
     }
-
-    
-
 }
 
 function finalScore() {
-
     setTimeout(function() {   
-
     let finalScoreDisplay = document.createElement("div");
     gameContainer.appendChild(finalScoreDisplay);
     finalScoreDisplay.setAttribute("id","final-score-display");
     let finalScore = parseInt(document.getElementById("correct-attempts").innerText);
     finalScoreDisplay.innerHTML = `Your Final score is ${finalScore} out of 10`;
-    
+    let playAgain = document.createElement("div");
+    finalScoreDisplay.appendChild(playAgain);
+    playAgain.setAttribute("id", "continue");
+    playAgain.innerHTML = "Play Again";
+    playAgain.style.animationDelay = "2s";
+    playAgain.addEventListener("click", closeFinalScore);  
     },2000);
 
+    function closeFinalScore() {
+        let finalScoreDisplay = document.getElementById("final-score-display");
+        finalScoreDisplay.remove();
+        document.getElementById("game-no").innerText = "1";
+        document.getElementById("level").innerText = "1";
+        document.getElementById("attempts").innerText = "0";
+        document.getElementById("correct-attempts").innerText = "0";
+        gameNumber = 1;
+        colourDisplay.style.background = "";
+        colourDisplayText.innerHTML = "Colours will appear here. Ready? Click Start.";
+        startGame.innerHTML = "Start";
+        startGame.style.visibility = "visible";
+    }
 }
