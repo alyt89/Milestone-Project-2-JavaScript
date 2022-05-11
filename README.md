@@ -51,7 +51,7 @@ The colours are stored as variables in the CSS file and used throughout from the
 
 The fonts used were taken from Google Fonts and applied throughout the project.
 
-The font used for headings was IBM Plex Mono.
+The font used for headings was IBM Plex Mono. I wanted the game to have a 90s/retro feel and keep everything visually quite simplistic.
 
 # Site features
 
@@ -92,6 +92,8 @@ The font used for headings was IBM Plex Mono.
 
 ![Responsive screenshot](/assets/images/colour-recall-final-score.png)
 
+- The final score shares the same animation used to introduce the new level and provides the user's score and an option to play again which triggers a function to reset the values and start from level 1 game 1 again.
+
 ### Footer
 
 ![Responsive screenshot](/assets/images/colour-recall-social-media-link.png)
@@ -118,8 +120,11 @@ CSS validation was done via Jigsaw validator on the following link with no error
 
 ## JS Hint
 
-JavaScript validator (JS Hint) used to check the javascript and this returned the following warnings regarding use of const and let keywords (compatability with certain extensions) and template literals (again re compatability with certain extensions): https://jshint.com/
+JavaScript validator (JS Hint) used to check the javascript and this returned the following warnings regarding use of const and let keywords (compatability with certain extensions) and template literals (again re compatability with certain extensions): https://jshint.com/.
 
+Once the configuration was updated with new JavaScript features there were no errors or warnings returned.
+
+![Responsive screenshot](/assets/images/js-hint.png)
 
 
 ## Lighthouse
@@ -143,6 +148,10 @@ Throughout the development of the site I have used Google DevTools to ensure tha
 There have been regular commits to github with clear remarks on each update to easily track progress of the project.
 
 Any external links open in a new tab and the site was tested by an impartial user for any intuitiveness, ease of use and layout/visibility issues. 
+
+Feedback was that consecutive clicks of the same colour could be clearer to remove doubt whether 1, 2, 3 etc clicks were registered. The delay on flashing the user's answer was reduced as a result to mitigate this.
+
+Other feedback was that it would be beneficial to the user to see the list of their guesses before submitting. This was added as a future enhancement.
 
 
 ## Main issues discovered and resolved
@@ -176,6 +185,8 @@ This project was hosted and deployed on GitHub, steps taken to deploy are as fol
 
 # Future site enhancements
 
+- Show the list of guesses from the user before clicking submit.
+
 - More levels with increased speed and longer lists of colours to remember.
 
 - Higher levels could introduce a random font colour to each entry to further challenge the user so they would have to memorise the colour of the font and not the word displayed or vice versa.
@@ -193,6 +204,10 @@ Specific sources where code has been borrowed has been quoted directly in the co
 - https://css-tricks.com/snippets/css/complete-guide-grid/#prop-grid-template As always provides reassurance on using the grid display which was used a good amount on the game.
 
 - https://stackoverflow.com/ Various articles consulted which pointed me in the right direction for certain doubts regarding loops. Specific code that was referenced is mentioned in the JS file.
+
+- Slack - Some doubts regarding certain Javascript use and scope of the project was helped by reading contributions by some of the other classmates doing projects with similar scope.
+
+- Martina Terlevic - my mentor who gave me all the right tips to help clean up my project and reassure me I was on the right track. 
 
 ## Images
 

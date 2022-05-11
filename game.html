@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+<!-- Main title area with tagline within the h2 element -->
     <div class="main-title">
         <h1><a href="index.html">Colour Recall</a></h1>
         <h2>
@@ -27,13 +27,15 @@
             <span>order?</span>
         </h2>
     </div>
-
+<!-- Main container for the game area -->
     <div id="game-container">
+        <!-- Game area divided into 4 rows with the largest section for the buttons -->
         <div class="game-area">
             <div class="game-info">
                 <div class="score">
                     <h3>Current score:</h3>
                     <div>
+                        <!-- Scores updated by Javascript depending on correct guesses -->
                         <span id="correct-attempts">0</span> from <span id="attempts">0</span>
                     </div>
                 </div>
@@ -47,13 +49,14 @@
                 <div id="colour-display">
                     <h3 id="colour-display-text">Colours will appear here. Ready? Click Start.</h3>
                 </div>
-
             </div>
+            <!-- Four coloured buttons with ids to trigger events on click -->
             <div class="buttons-area">
                 <div class="button green" id="green-button"></div>
                 <div class="button red" id="red-button"></div>
                 <div class="button yellow" id="yellow-button"></div>
                 <div class="button blue" id="blue-button"></div>
+                <!-- start game button positioned absolutely to remove from the grid display of buttons area -->
                 <div id="start-game">
                     START
                 </div>
@@ -67,7 +70,7 @@
         </div>
 
     </div>
-
+<!-- Footer with link to GitHub profile for any queries -->
     <footer>
         <div class="social-media-links">
             <i id="github-logo" class="fa-brands fa-github"></i>

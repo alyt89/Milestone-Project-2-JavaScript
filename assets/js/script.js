@@ -1,4 +1,4 @@
-/** variables declared for use throughout the document */
+//  variables declared for use throughout the document 
 
 const colours = ["green", "yellow", "blue", "red"];
 const redButton = document.getElementById("red-button");
@@ -27,9 +27,7 @@ function pickRandomColours() {
         var(--black) 10px
       )`;
     gameNumber = parseInt(document.getElementById("game-no").innerText);
-
     gameLength = 4 + gameNumber;
-
     let coloursList = [];
     while (i < gameLength) {
     coloursList.push(colours[Math.floor(Math.random() * 4)]);
@@ -37,13 +35,19 @@ function pickRandomColours() {
     i++;
     }
     newColoursList = coloursList;
-
     displayColours();
     intervalGap();
     return coloursList;
 }
 
+// Global Scope Event Listeners for the startGame button
+
+startGame.addEventListener("click", startGameClick);
+startGame.addEventListener("click", displayColours);
+startGame.addEventListener("click", intervalGap);
+
 /** Initiates the pickRandomColours function and is deployed once the user is ready to begin the next game. Also removes the click events on the coloured buttons to stop the user from accidentally submitting answers too early. */
+
 
 function startGameClick() {
     colourDisplayText.innerHTML = "";  
@@ -58,14 +62,12 @@ function startGameClick() {
     yellowButton.style.opacity = "0.5";
     redButton.style.opacity = "0.5";
     pickRandomColours();
-
 }
 
 /**  Displays the colours in the newColoursList array in order with a certain interval between each. The interval depends on the level with level 2 being twice the speed of level 1.
  * https://stackoverflow.com/questions/45498873/add-a-delay-after-executing-each-iteration-with-foreach-loop */
 
 function displayColours() {
-
     newColoursList.forEach(function(el, index) {
         setTimeout(function() {
             colourDisplayText.innerHTML = el;
@@ -90,12 +92,7 @@ setTimeout(function(){
     redButton.style.opacity = "1";
     submitButton.addEventListener("click", checkAnswer);
         }, (newColoursList.length * (interval / levelNumber))); 
-
 }
-
-startGame.addEventListener("click", startGameClick);
-startGame.addEventListener("click", displayColours);
-startGame.addEventListener("click", intervalGap);
 
 /** Function to register a click of the green button through the event listeners established in the intervalGap function. This pushes a string with the colour of the button clicked followe by an empty srting to the userAnswer array.  */
 
@@ -167,7 +164,6 @@ function increaseScore() {
     let oldScore = parseInt(document.getElementById("correct-attempts").innerText);
     document.getElementById("correct-attempts").innerText = ++oldScore;
     nextGame();
-
 }
 
 /** After user answer is submitted and checked the useranswer variable is reset to an empty array and the startgame div is made visible again replaced with the words "next game" instead */

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
+/* colours used in both pages stored in variables */
+
 :root {
     --black: rgb(10, 10, 10);
     --grey: rgb(22, 21, 21);
@@ -12,11 +14,15 @@
     --medium-white: rgb(245, 245, 245, 0.7);
 }
 
+/* general colors applied to body */
+
 body {
     background-color: var(--black);
     font-family: 'IBM Plex Mono', sans-serif;
     color: var(--white);
 }
+
+/* global styles applied */
 
 * {
     margin: 0;
@@ -24,6 +30,8 @@ body {
     border: none;
     box-sizing: border-box;
 }
+
+/* Both pages' main title */
 
 .main-title {
     height: 15vh;
@@ -65,6 +73,8 @@ h2 span:nth-of-type(4),
 h2 span:nth-of-type(6) {
     color: var(--blue);
 }
+
+/* Instructions page */
 
 .instruction-container,
 #game-container {
@@ -142,6 +152,7 @@ h2 span:nth-of-type(6) {
     animation-name: appear-two;
 }
 
+/* Footer */
 
 .social-media-links {
     display: grid;
@@ -159,6 +170,8 @@ h2 span:nth-of-type(6) {
     color: var(--medium-white);
     font-size: 0.8rem;
 }
+
+/* Animations for index.html */
 
 @keyframes appear {
     from {
@@ -181,6 +194,8 @@ h2 span:nth-of-type(6) {
         z-index: 3;
     }
 }
+
+/* Responsive design for instructions page */
 
 @media screen and (max-width:900px) {
     p {
@@ -229,8 +244,7 @@ h2 span:nth-of-type(6) {
     }
 }
 
-/* 
-Game 1 */
+/* Game Page styles */
 
 .game-area {
     background-color: var(--grey);
@@ -283,17 +297,18 @@ Game 1 */
     background-color: var(--red);
 }
 
+/* To emphasise user's selection  */
+
 .button:hover {
     border-width: 3px;
     border-color: var(--medium-white);
 }
 
-
+/* Imitate a click effect by lowering opacity on click */
 
 .button:active {
     opacity: 0.6;
 }
-
 
 .colour-display-area {
     display: grid;
@@ -341,8 +356,6 @@ Game 1 */
     box-shadow: 5px 10px var(--black);
 }
 
-
-
 .submit-area {
     height: 100%;
     width: 80%;
@@ -364,38 +377,9 @@ Game 1 */
 }
 
 #submit-button:hover {
-
     background-color: var(--white);
     color: var(--black);
     border: 1px solid var(--black);
-}
-
-
-@keyframes start-appear {
-    0% {
-        z-index: 0;
-        opacity: 0;
-    }
-
-    100% {
-        z-index: 3;
-        opacity: 1;
-    }
-}
-
-@media screen and (max-width:600px) {
-    h3 {
-        font-size: 1em;
-    }
-
-    p {
-        font-size: 0.8em;
-    }
-
-    .game-info {
-        padding: 0 5px;
-        justify-content: space-around;
-    }
 }
 
 #level-two,
@@ -417,18 +401,36 @@ Game 1 */
     cursor: pointer;
 }
 
-@keyframes leveltwo {
 
+/* Animation for Game page */
+
+@keyframes start-appear {
     0% {
-        z-index: -5
+        z-index: 0;
+        opacity: 0;
     }
 
     100% {
-        z-index: 5;
+        z-index: 3;
+        opacity: 1;
     }
 }
 
-@media screen and (max-width: 600px) {
+/* Responsive design for Game page */
+
+@media screen and (max-width:600px) {
+    h3 {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+
+    .game-info {
+        padding: 0 5px;
+        justify-content: space-around;
+    }
 
     #level-two,
     #final-score-display {
