@@ -126,12 +126,12 @@ Testing was done via Lighthouse and scored as below on Desktop and Mobile:
 
 ### Desktop:
 
-![Responsive screenshot]
+![Responsive screenshot](/assets/images/desktop-lighthouse-report.png)
 
 
 ### Mobile:
 
-![Responsive screenshot]
+![Responsive screenshot](/assets/images/mobile-lighthouse-report.png)
 
 
 The site has been tested on Google Chrome, FireFox and Microsoft Edge. It has also been tested on a mobile device to check the responsiveness.
@@ -140,9 +140,8 @@ Throughout the development of the site I have used Google DevTools to ensure tha
 
 There have been regular commits to github with clear remarks on each update to easily track progress of the project.
 
-All links both internal and external have been tested and any external links open in a new tab to maintain good user experience.
+Any external links open in a new tab and the site was tested by an impartial user for any intuitiveness, ease of use and layout/visibility issues. 
 
-The site has also been tested by an impartial user to test for intuitiveness, ease of use and layout/visibility issues. One issue raised from this was the text contrast on one of the visual links and this was subsequently resolved by increasing opacity/constrast.
 
 ## Main issues discovered and resolved
 
@@ -159,9 +158,6 @@ The site has also been tested by an impartial user to test for intuitiveness, ea
 - While the colour sequence was being displayed users could start clicking the buttons in real time and therefore cheat rather than memorise the sequence.
 
 - This was fixed by using the setTimeOut function to delay the 4 colour buttons and submit button until the sequence had finished. 
-
-
-
 
 # Deployment
 
@@ -190,9 +186,11 @@ Through development of the project I have used various sources to help with the 
 
 Specific sources where code has been borrowed has been quoted directly in the code files.
 
-- https://www.w3schools.com/default.asp
+- https://www.w3schools.com/default.asp. Various pages on the W3 Schools were used from reconfirming if/else loops and basic variable syntax.
 
--
+- https://css-tricks.com/snippets/css/complete-guide-grid/#prop-grid-template As always provides reassurance on using the grid display which was used a good amount on the game.
+
+- https://stackoverflow.com/ Various articles consulted which pointed me in the right direction for certain doubts regarding loops. Specific code that was referenced is mentioned in the JS file.
 
 ## Images
 
