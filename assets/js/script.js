@@ -93,7 +93,6 @@ startGame.addEventListener("click", intervalGap);
 
 
 function registerGreenButtonClick() {
-    console.log("green button clicked");
     userAnswer.push("green");
     userAnswer.push("");
     colourDisplayText.innerHTML = "green";
@@ -101,25 +100,18 @@ function registerGreenButtonClick() {
     setTimeout(function() {
         colourDisplayText.innerHTML = "";
     },500);
-
-    console.log(userAnswer);
 }
 
 function registerBlueButtonClick() {
-    console.log("blue button clicked");
     userAnswer.push("blue");
     userAnswer.push("");
     colourDisplayText.innerHTML = "blue";
-
     setTimeout(function() {
         colourDisplayText.innerHTML = "";
     },500);
-
-    console.log(userAnswer);
 }
 
 function registerYellowButtonClick() {
-    console.log("yellow button clicked");
     userAnswer.push("yellow");
     userAnswer.push("");
     colourDisplayText.innerHTML = "yellow";
@@ -127,12 +119,9 @@ function registerYellowButtonClick() {
     setTimeout(function() {
         colourDisplayText.innerHTML = "";
     },500);
-
-    console.log(userAnswer);
 }
 
 function registerRedButtonClick() {
-    console.log("red button clicked");
     userAnswer.push("red");
     userAnswer.push("");
     colourDisplayText.innerHTML = "red";
@@ -140,9 +129,6 @@ function registerRedButtonClick() {
     setTimeout(function() {
         colourDisplayText.innerHTML = "";
     },500);
-
-    console.log(userAnswer);
-
 }
 
 function checkAnswer() {
@@ -151,13 +137,11 @@ function checkAnswer() {
     });
 
     if (isSame) {
-        console.log("correct answer");
         colourDisplay.style.background = "green";
         colourDisplayText.innerHTML = "CORRECT!";
         increaseScore();
     }
      else {
-         console.log("incorrect answer");
          colourDisplay.style.background = "red";
          colourDisplayText.innerHTML = "INCORRECT :( ";
          nextGame();
