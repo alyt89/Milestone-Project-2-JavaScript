@@ -106,13 +106,15 @@ The font used for headings was IBM Plex Mono.
 
 The HTML on all pages was validated by testing through https://validator.w3.org/#validate_by_input with no errors found as shown below:
 
-![Responsive screenshot]
+![Responsive screenshot](/assets/images/html-valildator-index-page.png)
+
+![Responsive screenshot](/assets/images/html-valildator-game-page.png)
 
 ## CSS validator
 
 CSS validation was done via Jigsaw validator on the following link with no errors found: https://jigsaw.w3.org/css-validator/#validate_by_input
 
-![Responsive screenshot]
+![Responsive screenshot](/assets/images/css-validator.png)
 
 ## JS Hint
 
