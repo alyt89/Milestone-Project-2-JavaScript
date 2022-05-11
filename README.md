@@ -23,10 +23,7 @@ The website is expected to attract users who:
 
 - Enjoy memory games without being too complex.
 
-- Want to enjoy a quick, fun and easy game.
-
-
-
+- Want to enjoy a quick and fun game.
 
 
 The website will allow users to:
@@ -42,7 +39,7 @@ This project required creating an interactive website and documenting its progre
 
 ## Color scheme
 
-The colour scheme on the project is quite retro in look. With the game itself being based on 4 primary colours (red, green, blue and yellow) the backdrop was set as black and white to provide a distinct contrast.
+The colour scheme uses 6 main colours, with the background and text/borders being mostly a contrast of black and white. The game itself is based on 4 primary colours (red, green, blue and yellow) which constrasts against the black and white background.
 
 The colours are stored as variables in the CSS file and used throughout from these variables.
 
@@ -51,19 +48,21 @@ The colours are stored as variables in the CSS file and used throughout from the
 
 The fonts used were taken from Google Fonts and applied throughout the project.
 
-The font used for headings was IBM Plex Mono. I wanted the game to have a 90s/retro feel and keep everything visually quite simplistic.
+The font used for headings was IBM Plex Mono. The site and game are intended to have a 90s/retro feel and keep everything visually quite simplistic.
 
 # Site features
 
 ## Main Title
 
-- The title and tagline is displayed on both pages and has the largest font to be clear the name of the game and the basic principle of it.
+- The title and tagline is displayed on both pages and has the largest font to be clear the name of the game and the basic principle of it. The title also acts as an anchor tag back to the index.html page.
 
 ## Intro / Game rules page
 
 ![Responsive screenshot](/assets/images/colour-recall-instructions-page.png)
 
 - The index.html file is the initial page displaying the basic game instructions/rules. There is an animation effect to delay each set of instructions to dissuade the user from skipping forward without reading them. The continue button is a link to the main game page.
+
+The continue button link takes the user onto the game page.
 
 ## Game page
 
