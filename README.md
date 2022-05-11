@@ -38,7 +38,7 @@ The website will allow users to:
 
 ## Requirements
 
-This project required creating an interactive website and documenting its progress through GitHub. Interactive elements through the use of JavaScript were required as part of the project.
+This project required creating an interactive website and documenting its progress through GitHub. Interactive elements through the use of JavaScript were also required as part of the project.
 
 ## Color scheme
 
@@ -55,27 +55,48 @@ The font used for headings was IBM Plex Mono.
 
 # Site features
 
+## Main Title
+
+- The title and tagline is displayed on both pages and has the largest font to be clear the name of the game and the basic principle of it.
+
 ## Intro / Game rules page
+
+![Responsive screenshot](/assets/images/colour-recall-instructions-page.png)
+
+- The index.html file is the initial page displaying the basic game instructions/rules. There is an animation effect to delay each set of instructions to dissuade the user from skipping forward without reading them. The continue button is a link to the main game page.
 
 ## Game page
 
 ### Main Game Area
 
+![Responsive screenshot](/assets/images/colour-recall-main-game-area.png)
+
+- The main game area is comprised of 4 main sections separated in grid format. The top has the game info details. Below is the colour display area where the text appears. The coloured buttons and start game button take up the most space in the centre of the main game area and at the bottom is the submit button.
+
+### Coloured Buttons
+
+- The Coloured buttons have CSS hover and click effects to be clear to the user when they are clicking or about to click a certain button. This is further reinforced by the name of the colour pressed being displayed in the colour display area when the user enters their answer.
+
+- While the colour list is displayed the buttons (both coloured and submit) are reduced in opacity to limit the temptation to click them while the computer displays the random generated colour list.
 
 
 ### Game Info details
 
+![Responsive screenshot](/assets/images/colour-recall-current-score.png)
 
+![Responsive screenshot](/assets/images/colour-recall-level-game-number.png)
 
-
+- As the user progresses through the game the score and game number are displayed in the top left and top right hand corners respectively.
 
 ### Final Score
 
-
+![Responsive screenshot](/assets/images/colour-recall-final-score.png)
 
 ### Footer
 
-- Link to GitHub profile added at bottom of page.
+![Responsive screenshot](/assets/images/colour-recall-social-media-link.png)
+
+- The footer inclues a very basic link to my GitHub profile at the bottom of page.
 
 
 
@@ -95,7 +116,9 @@ CSS validation was done via Jigsaw validator on the following link with no error
 
 ## JS Hint
 
-JavaScript validator (JS Hint) used to check the javascript and this returned the following warnings regarding use of const and let keywords (compatability with certain extensions) and template literals (again re compatability with certain extensions).
+JavaScript validator (JS Hint) used to check the javascript and this returned the following warnings regarding use of const and let keywords (compatability with certain extensions) and template literals (again re compatability with certain extensions): https://jshint.com/
+
+
 
 ## Lighthouse
 
@@ -123,9 +146,9 @@ The site has also been tested by an impartial user to test for intuitiveness, ea
 
 ## Main issues discovered and resolved
 
-1. Duplicate colours in list
+1. Displaying repeated colours in list
 
-- I wanted the game to include the option of the same colour being displayed consecutively in the array however when this was displayed in the "colour-display" div since there was no gap between each element in the array it wasn't clear that 2 consecutive colours of the same value were 2 rather than 1.
+- I wanted the game to include the option of the same colour being displayed consecutively in the array however when this was displayed in the "colour-display" div since there was no gap between each element in the array it wasn't clear that 2 consecutive colours of the same value were 2 values rather than 1.
 
 - Initial attempt was to utilise setTimeOut or setInterval function to create a delay and reset innerHTML to "" (blank text) but this was asynchronous.
 
@@ -140,18 +163,17 @@ The site has also been tested by an impartial user to test for intuitiveness, ea
 
 
 
-
 # Deployment
 
 This project was hosted and deployed on GitHub, steps taken to deploy are as follows:
 
 - Open relevant GitHub repository and navigate to 'Settings' tab.
 
-- Navigate to 'Pages' option located in the 'Code and Automation' section 
+- Navigate to 'Pages' option located in the 'Code and Automation' section .
 
-- Under 'Source' heading select the main branch and 'root' folder, once done click 'save'
+- Under 'Source' heading select the main branch and 'root' folder, once done click 'save'.
 
-- Refresh page until the active URL is provided
+- Refresh page until the active URL is provided.
 
 
 # Future site enhancements
@@ -164,12 +186,14 @@ This project was hosted and deployed on GitHub, steps taken to deploy are as fol
 
 # Credits
 
-Through the development of this site I have used various resources to help me especially when applying the Grid and Flexbox principles, the guidance on https://css-tricks.com/snippets/css/a-guide-to-flexbox/ and https://css-tricks.com/snippets/css/complete-guide-grid/#prop-grid-template were particularly helpful for this.
+Through development of the project I have used various sources to help with the code mostly in terms of the javascript.
 
-In addition I have used the W3Schools website to assist with general HTML and CSS queries such as Z-index and position.
+Specific sources where code has been borrowed has been quoted directly in the code files.
 
-Specific credits are noted in the CSS file for animations on the home and gallery pages.
+- https://www.w3schools.com/default.asp
+
+-
 
 ## Images
 
-Images were sourced from a combination of https://unsplash.com/ and Google Images. As Ski Cross is quite a unique sport there were limited images for specific elements of Ski Cross that were required for the gallery page and therefore Google Images was required.
+No images were used in the development of this project although the github icon has been used from fontawesome.com.
