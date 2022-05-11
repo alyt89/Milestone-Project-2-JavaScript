@@ -382,17 +382,14 @@ display: grid;
     h3 {
         font-size: 1em;
     }
-
     p {
         font-size: 0.8em;
     }
-
     .game-info {
         padding: 0 5px;
         justify-content: space-around;
     }
 }
-
 
 #level-two, #final-score-display {
     position: absolute;
@@ -404,7 +401,11 @@ display: grid;
     font-size: 3rem;
     background: var(--black);
     z-index: 5;
+    text-align: center;
+}
 
+#level-two div, #final-score-display div {
+    cursor: pointer;
 }
 
 @keyframes leveltwo {
@@ -416,4 +417,11 @@ display: grid;
     100% {
         z-index: 5;
     }
+}
+
+@media screen and (max-width: 600px){
+
+  #level-two, #final-score-display {
+      font-size: 20px;
+  }  
 }
