@@ -14,8 +14,7 @@ This is the second of 5 projects as part of the Diploma in Software Development 
 
 A link to the live website can be found here:
 
-https://alyt89.github.io/Milestone-Project-2-JavaScript/game.html
-
+https://alyt89.github.io/Milestone-Project-2-JavaScript/index.html
 
 # User goals
 

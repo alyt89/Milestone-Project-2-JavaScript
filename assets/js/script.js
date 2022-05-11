@@ -10,7 +10,7 @@ const submitButton = document.getElementById("submit-button");
 const colourDisplayText = document.getElementById("colour-display-text");
 const colourDisplay = document.getElementById("colour-display");
 const gameContainer = document.getElementById("game-container");
-let interval = 1000;
+let interval = 800;
 let levelNumber = parseInt(document.getElementById("level").innerText);
 let i = 0;
 let newColoursList;
